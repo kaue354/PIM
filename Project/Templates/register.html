@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro - Sistema Acadêmico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      /* Exemplo simples de estilos para mensagens flash */
+      .flash-messages {
+          margin: 15px 0;
+          padding: 0;
+          list-style: none;
+      }
+      .flash {
+          padding: 10px 15px;
+          border-radius: 4px;
+          margin-bottom: 10px;
+          font-weight: 600;
+      }
+      .flash.success {
+          background-color: #d4edda;
+          color: #155724;
+          border: 1px solid #c3e6cb;
+      }
+      .flash.error {
+          background-color: #f8d7da;
+          color: #721c24;
+          border: 1px solid #f5c6cb;
+      }
+      .flash.info {
+          background-color: #d1ecf1;
+          color: #0c5460;
+          border: 1px solid #bee5eb;
+      }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+
+        <!-- Círculos -->
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        <div class="circle5"></div>
+        <div class="circle6"></div>
+        <div class="circle7"></div>
+        <div class="circle8"></div>
+
+        <!-- Triângulos -->
+        <div class="triangle1"></div>
+        <div class="triangle2"></div>
+
+        <!-- Quadrados -->
+        <div class="square1"></div>
+        <div class="square2"></div>
+
+        <!-- Pontos flutuantes -->
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+        <div class="dot4"></div>
+        <div class="dot5"></div>
+        <div class="dot6"></div>
+        <div class="dot7"></div>
+        <div class="dot8"></div>
+        <div class="dot9"></div>
+        <div class="dot10"></div>
+        <div class="dot11"></div>
+        <div class="dot12"></div>
+        <div class="dot13"></div>
+        <div class="dot14"></div>
+        <div class="dot15"></div>
+        <div class="dot16"></div>
+        <div class="dot17"></div>
+        <div class="dot18"></div>
+        <div class="dot19"></div>
+        <div class="dot20"></div>
+
+        <!-- Pontos centrais -->
+        <div class="dot-top-center"></div>
+        <div class="dot-bottom-center"></div>
+
+        <div class="login-wrapper">
+            <!-- Formulário de cadastro -->
+            <div class="login-form">
+                <h2>Cadastre-se</h2>
+                <p class="text-center" style="margin-top: 10px;">Crie sua conta para acessar o sistema.</p>
+
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    <ul class="flash-messages">
+                      {% for category, message in messages %}
+                        <li class="flash {{ category }}">{{ message }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% endwith %}
+
+                <form method="POST" action="{{ url_for('register') }}">
+                    <input type="text" name="username" placeholder="Nome de usuário" required />
+                    <input type="email" name="email" placeholder="E-mail" required />
+                    <input type="password" name="password" placeholder="Senha" required />
+
+                    <button type="submit">Cadastrar</button>
+                </form>
+
+                <p>Já tem uma conta? 
+                    <a href="{{ url_for('login') }}" class="text-white hover:underline font-medium">
+                        Faça login
+                    </a>
+                </p>
+            </div>
+
+            <!-- Lado direito com ilustração -->
+            <div class="login-illustration"></div>
+        </div>
+    </div>
+</body>
+</html>

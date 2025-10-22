@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Alunos{% endblock %}
+{% block content %}
+<a href="{{ url_for('dashboard') }}" class="inline-block mb-4 bg-gray-500 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600 transition">
+    <i class="fas fa-arrow-left mr-2"></i>Voltar ao Dashboard
+</a>
+
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Gerenciar Alunos</h2>
+
+<form method="POST" class="bg-white p-6 rounded-lg shadow-md mb-6 grid gap-4 md:grid-cols-3">
+    <input type="text" name="nome" placeholder="Nome do aluno" required class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+    <input type="email" name="email" placeholder="Email" class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+    <input type="text" name="matricula" placeholder="Matrícula" class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+    <button type="submit" class="md:col-span-3 bg-indigo-500 text-white font-semibold py-3 rounded-md hover:bg-indigo-600 transition">Cadastrar</button>
+</form>
+
+<div class="overflow-x-auto">
+<table class="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
+    <thead class="bg-indigo-500 text-white">
+        <tr>
+            <th class="py-3 px-4 text-left">Nome</th>
+            <th class="py-3 px-4 text-left">Email</th>
+            <th class="py-3 px-4 text-left">Matrícula</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for aluno in alunos %}
+        <tr class="border-b hover:bg-gray-100">
+            <td class="py-2 px-4">{{ aluno.nome }}</td>
+            <td class="py-2 px-4">{{ aluno.email }}</td>
+            <td class="py-2 px-4">{{ aluno.matricula }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

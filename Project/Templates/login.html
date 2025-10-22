@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+
+        <!-- Círculos, triângulos, quadrados e pontos flutuantes -->
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        <div class="circle5"></div>
+        <div class="circle6"></div>
+        <div class="circle7"></div>
+        <div class="circle8"></div>
+        <div class="triangle1"></div>
+        <div class="triangle2"></div>
+        <div class="square1"></div>
+        <div class="square2"></div>
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+        <div class="dot4"></div>
+        <div class="dot5"></div>
+        <div class="dot6"></div>
+        <div class="dot7"></div>
+        <div class="dot8"></div>
+        <div class="dot9"></div>
+        <div class="dot10"></div>
+        <div class="dot11"></div>
+        <div class="dot12"></div>
+        <div class="dot13"></div>
+        <div class="dot14"></div>
+        <div class="dot15"></div>
+        <div class="dot16"></div>
+        <div class="dot17"></div>
+        <div class="dot18"></div>
+        <div class="dot19"></div>
+        <div class="dot20"></div>
+        <div class="dot-top-center"></div>
+        <div class="dot-bottom-center"></div>
+
+        <div class="login-wrapper">
+            <!-- Lado esquerdo -->
+            <div class="login-form">
+                <h2>Seja bem-vindo!</h2>
+                <p class="text-center" style="margin-top: 10px;">Faça login para acessar o sistema.</p>
+                
+                <form method="POST" action="{{ url_for('login') }}">
+                    <input type="email" name="email" placeholder="Digite seu e-mail" required>
+                    <input type="password" name="senha" placeholder="Digite sua senha" required>
+                    
+                    <div class="options">
+                        <label>
+                            <input type="checkbox">
+                            Lembrar-me
+                        </label>
+                        <a href="#">Esqueceu a senha?</a>
+                    </div>
+
+                    <button type="submit">Login</button>
+                </form>
+
+                <!-- Botão de cadastro apontando para a rota /register -->
+                <p>Não tem conta? 
+                    <a href="{{ url_for('register') }}" class="text-purple-600 hover:underline font-medium">
+                        Cadastre-se
+                    </a>
+                </p>
+            </div>
+
+            <!-- Lado direito com a ilustração -->
+            <div class="login-illustration"></div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Aulas{% endblock %}
+{% block content %}
+<a href="{{ url_for('dashboard') }}" class="inline-block mb-4 bg-gray-500 text-white font-semibold py-2 px-4 rounded hover:bg-gray-600 transition">
+    <i class="fas fa-arrow-left mr-2"></i>Voltar ao Dashboard
+</a>
+
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Gerenciar Aulas</h2>
+
+<form method="POST" class="bg-white p-6 rounded-lg shadow-md mb-6 grid gap-4 md:grid-cols-3">
+    <select name="id_turma" required class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+        <option value="">Selecione a Turma</option>
+        {% for turma in turmas %}
+        <option value="{{ turma.id }}">{{ turma.nome }}</option>
+        {% endfor %}
+    </select>
+    <input type="text" name="titulo" placeholder="Título da aula" required class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+    <input type="date" name="data_aula" required class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+    <button type="submit" class="md:col-span-3 bg-yellow-500 text-white font-semibold py-3 rounded-md hover:bg-yellow-600 transition">Cadastrar</button>
+</form>
+
+<div class="overflow-x-auto">
+<table class="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
+    <thead class="bg-yellow-500 text-white">
+        <tr>
+            <th class="py-3 px-4 text-left">Turma</th>
+            <th class="py-3 px-4 text-left">Título</th>
+            <th class="py-3 px-4 text-left">Data</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for aula in aulas %}
+        <tr class="border-b hover:bg-gray-100">
+            <td class="py-2 px-4">{{ aula.nome_turma }}</td>
+            <td class="py-2 px-4">{{ aula.titulo }}</td>
+            <td class="py-2 px-4">{{ aula.data_aula }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

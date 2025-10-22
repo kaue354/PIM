@@ -1,0 +1,226 @@
+/* Fonte global */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container central com fundo gradiente, círculos, triângulos, quadrados e pontos */
+.login-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4b0082, #7a1eff);
+    overflow: hidden;
+}
+
+/* Círculos */
+.login-container .circle1, .login-container .circle2, .login-container .circle3, .login-container .circle4,
+.login-container .circle5, .login-container .circle6, .login-container .circle7, .login-container .circle8 {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 0 60px rgba(255,255,255,0.1);
+    animation: float 30s ease-in-out infinite alternate; /* animação mais lenta */
+}
+.circle1 { width: 150px; height: 150px; top: 50px; right: 50px; }
+.circle2 { width: 100px; height: 100px; bottom: 100px; left: 80px; }
+.circle3 { width: 120px; height: 120px; top: 200px; left: 200px; }
+.circle4 { width: 180px; height: 180px; bottom: 150px; right: 200px; }
+.circle5 { width: 90px; height: 90px; top: 350px; left: 100px; }
+.circle6 { width: 130px; height: 130px; top: 150px; right: 250px; }
+.circle7 { width: 110px; height: 110px; bottom: 200px; left: 250px; }
+.circle8 { width: 140px; height: 140px; top: 400px; right: 100px; }
+
+/* Triângulos */
+.login-container .triangle1, .login-container .triangle2 {
+    position: absolute;
+    width: 0; height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 100px solid rgba(255,255,255,0.05);
+    animation: float 40s ease-in-out infinite alternate; /* mais lento */
+}
+.triangle1 { top: 100px; left: 300px; transform: rotate(15deg); }
+.triangle2 { bottom: 150px; right: 250px; transform: rotate(-25deg); }
+
+/* Quadrados */
+.login-container .square1, .login-container .square2 {
+    position: absolute;
+    width: 50px; height: 50px;
+    background: rgba(255,255,255,0.05);
+    animation: float 36s ease-in-out infinite alternate; /* mais lento */
+}
+.square1 { top: 50px; left: 150px; transform: rotate(20deg); }
+.square2 { bottom: 100px; right: 150px; transform: rotate(-15deg); }
+
+/* Pontos flutuantes */
+.login-container .dot1, .login-container .dot2, .login-container .dot3, .login-container .dot4,
+.login-container .dot5, .login-container .dot6, .login-container .dot7, .login-container .dot8,
+.login-container .dot9, .login-container .dot10, .login-container .dot11, .login-container .dot12,
+.login-container .dot13, .login-container .dot14, .login-container .dot15, .login-container .dot16,
+.login-container .dot17, .login-container .dot18, .login-container .dot19, .login-container .dot20,
+.login-container .dot-top-center, .login-container .dot-bottom-center {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    animation: float 24s ease-in-out infinite alternate; /* mais lento */
+}
+
+/* Posições dos pontos */
+.dot1 { top: 20px; left: 50px; }   
+.dot2 { top: 80px; right: 100px; }
+.dot3 { top: 150px; left: 200px; } 
+.dot4 { top: 200px; right: 50px; }
+.dot5 { bottom: 50px; left: 80px; } 
+.dot6 { bottom: 100px; right: 150px; }
+.dot7 { top: 300px; left: 350px; } 
+.dot8 { top: 400px; right: 200px; }
+.dot9 { bottom: 200px; left: 300px; } 
+.dot10 { bottom: 150px; right: 350px; }
+.dot11 { top: 100px; left: 250px; } 
+.dot12 { top: 220px; right: 120px; }
+.dot13 { bottom: 300px; left: 150px; } 
+.dot14 { bottom: 50px; right: 250px; }
+.dot15 { top: 350px; left: 100px; } 
+.dot16 { top: 50px; right: 300px; }
+.dot17 { bottom: 80px; left: 400px; } 
+.dot18 { bottom: 180px; right: 50px; }
+.dot19 { top: 450px; left: 180px; } 
+.dot20 { bottom: 250px; right: 180px; }
+
+/* Pontos centrais superior e inferior */
+.dot-top-center { top: 10px; left: 50%; transform: translateX(-50%); }
+.dot-bottom-center { bottom: 10px; left: 50%; transform: translateX(-50%); }
+
+/* Animação flutuante */
+@keyframes float {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(10px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+/* Container geral do login */
+.login-wrapper {
+    display: flex;
+    width: 95%;
+    max-width: 1200px;
+    min-height: 600px;
+    box-shadow: 0px 12px 40px rgba(0,0,0,0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Lado esquerdo do formulário */
+.login-form {
+    flex: 1;
+    background: linear-gradient(135deg, #4b0082, #9b30ff);
+    color: #fff;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 12px 0 0 12px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+}
+
+.login-form h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+    box-sizing: border-box;
+    height: 45px;
+}
+
+.login-form input:focus {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.login-form button {
+    background: #fff;
+    color: #4b0082;
+    font-weight: bold;
+    padding: 12px 15px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: 0.3s;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    height: 45px;
+}
+
+.login-form button:hover {
+    background: #e0d4ff;
+}
+
+/* Checkbox e link de senha */
+.login-form .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.login-form .options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.login-form .options input[type="checkbox"] {
+    margin: 0;
+}
+
+.login-form a {
+    color: #ffd6ff;
+    text-decoration: underline;
+    font-size: 12px;
+}
+
+.login-form p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 14px;
+}
+
+/* Lado direito com imagem */
+.login-illustration {
+    flex: 1.2;
+    background: url("../static/illustration.png") no-repeat center center;
+    background-size: cover;
+    border-radius: 0 12px 12px 0;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .login-wrapper { flex-direction: column; }
+    .login-illustration { height: 200px; width: 100%; border-radius: 0; }
+    .login-form { padding: 2rem 1rem; border-radius: 0; }
+}
